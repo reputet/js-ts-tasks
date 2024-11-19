@@ -5,5 +5,11 @@
  * @returns {Object}
  */
 module.exports.removeItems = function removeItems(arr, value) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  for (let i = 0; i < arr.length; i++) {
+    if (JSON.stringify(arr[i]) === JSON.stringify(value)) {
+      arr.splice(i, 1);
+      i -= 1;
+    }
+  }
+  return arr;
 };
