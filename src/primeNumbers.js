@@ -3,6 +3,27 @@
  * @param {number} highestNumber - a highest possible number
  * @returns {function}
  */
+
+function isPrime(number) {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= number / 2; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
 module.exports.primeNumbers = function primeNumbers(highestNumber) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  function inside(start, end) {
+    const range = [];
+    for (let number = start; number <= end; number++) {
+      range.push(number);
+    }
+    return range.filter(isPrime);
+  }
+  return inside;
 };
+

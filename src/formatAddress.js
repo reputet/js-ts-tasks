@@ -4,5 +4,9 @@
  * @returns {function}
  */
 module.exports.formatAddress = function formatAddress() {
-  throw new Error('Not implemented'); // remove me and write a solution
+  function inside(obj) {
+    const {street, house, apartment, city, postalCode, country} = obj;
+    return `${street}, ${house}, ${apartment}, ${city}, ${postalCode}, ${country}`;
+  }
+  return inside;
 };
