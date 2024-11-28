@@ -13,5 +13,9 @@
  * @returns {function}
  */
 module.exports.palindrome = function palindrome(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+  return function inside(message) {
+    // \W matches any non-word character (equivalent to [^a-zA-Z0-9_])
+    this.str = message.replace(/\W/g, '').toLowerCase();
+    return TestUtils.isPalindrome.call(this);
+  }
 };
